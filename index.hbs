@@ -1,0 +1,56 @@
+{{!< default}}
+
+{{! The comment above "< default" means - insert everything in this file into
+    the {body} of the default.hbs template, which contains our header/footer. }}
+
+{{! The big featured header on the homepage, with the site logo and description }}
+<header class="site-head" {{#if @blog.cover}}style="background-image: url({{@blog.cover}})"{{/if}}>
+    <div class="vertical">
+        <div class="site-head-content inner">
+            {{#if @blog.logo}}<a class="blog-logo" href="{{@blog.url}}"><img src="{{@blog.logo}}" alt="Blog Logo" /></a>{{/if}}
+            <h1 class="blog-title">{{@blog.title}} <span class='subtitle'>Blog</span></h1>
+            <h2 class="blog-description">{{@blog.description}}<br/>Brought to you by <a href="/">Harmonia</a>.</h2>
+
+<!-- Begin MailChimp Signup Form -->
+<div id="mc_embed_signup">
+<form action="http://harmonia.us3.list-manage2.com/subscribe/post?u=6bb4c7c29d4cee15704e2a1a1&amp;id=7112729437" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="">
+	<input type="email" placeholder="Add your email for updates..." value="" name="EMAIL" class="required email" id="mce-EMAIL">
+        <input type="submit" value="Go" name="subscribe" id="mc-embedded-subscribe" class="button">
+	<input type="hidden" value="blog" name="SOURCE" id="mce-SOURCE">
+	<div id="mce-responses">
+		<div class="response" id="mce-error-response" style="display:none"></div>
+		<div class="response" id="mce-success-response" style="display:none"></div>
+	</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+    <div style="position: absolute; left: -5000px;"><input type="text" name="b_6bb4c7c29d4cee15704e2a1a1_7112729437" value=""></div>
+	
+</form>
+</div>
+
+<!--End mc_embed_signup-->
+        </div>
+    </div>
+</header>
+
+{{! The main content area on the homepage }}
+<main class="content" role="main">
+
+    {{! Each post will be output using this markup }}
+    {{#foreach posts}}
+
+    <article class="{{post_class}}">
+        <header class="post-header">
+            <span class="post-meta"><time datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMM YYYY"}}</time> {{tags prefix="on "}}</span>
+            <h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
+
+        </header>
+        <section class="post-excerpt">
+            <p>{{excerpt}}&hellip;</p>
+        </section>
+    </article>
+
+    {{/foreach}}
+
+    {{!! After all the posts, we have the previous/next pagination links }}
+    {{pagination}}
+
+</main>
