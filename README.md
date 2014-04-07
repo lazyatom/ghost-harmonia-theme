@@ -1,6 +1,6 @@
-# Casper
+# Harmonia theme (based on Casper)
 
-The default theme for [Ghost](http://github.com/tryghost/ghost/).
+A theme for http://harmonia.io/blog, based on the default theme for [Ghost](http://github.com/tryghost/ghost/).
 
 ## Copyright & License
 
