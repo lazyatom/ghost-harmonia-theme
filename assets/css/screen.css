@@ -501,27 +501,6 @@ margin on the iframe, cause it breaks stuff. */
   color: #ddd;
 }
 
-.site-header #mc_embed_signup {
-  margin: 20px 0;
-}
-
-.site-header #mc_embed_signup input[type=email] {
-    border: none;
-    background-color: rgba(255,255,255,0.2);
-    color: white;
-    padding: 2px 10px;
-    margin: 0;
-    width: 300px;
-}
-
-.site-header #mc_embed_signup input[type=submit] {
-    border: none;
-    background-color: rgba(255,255,255,0.3);
-    color: white;
-    padding: 2px 10px;
-    margin-left: -5px;
-}
-
 /* Every post, on every page, gets this style on its <article> tag */
 .post {
     position: relative;
@@ -1071,10 +1050,6 @@ margin on the iframe, cause it breaks stuff. */
         line-height: 1.5em;
     }
 
-    .site-head #mc_embed_signup {
-        font-size: 1.7rem;
-    }
-
     .post {
         font-size: 0.9em;
         line-height: 1.6em;
@@ -1146,10 +1121,6 @@ margin on the iframe, cause it breaks stuff. */
     }
 
     .blog-description {
-        font-size: 1.5rem;
-    }
-
-    .site-head #mc_embed_signup {
         font-size: 1.5rem;
     }
 
