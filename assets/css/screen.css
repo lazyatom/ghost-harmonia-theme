@@ -501,25 +501,25 @@ margin on the iframe, cause it breaks stuff. */
   color: #ddd;
 }
 
-#mc_embed_signup {
+.site-header #mc_embed_signup {
   margin: 20px 0;
 }
 
-#mc_embed_signup input[type=email] {
-border: none;
-background-color: rgba(255,255,255,0.2);
-color: white;
-padding: 2px 10px;
-margin: 0;
-width: 300px;
+.site-header #mc_embed_signup input[type=email] {
+    border: none;
+    background-color: rgba(255,255,255,0.2);
+    color: white;
+    padding: 2px 10px;
+    margin: 0;
+    width: 300px;
 }
 
-#mc_embed_signup input[type=submit] {
-border: none;
-background-color: rgba(255,255,255,0.3);
-color: white;
-padding: 2px 10px;
-margin-left: -5px;
+.site-header #mc_embed_signup input[type=submit] {
+    border: none;
+    background-color: rgba(255,255,255,0.3);
+    color: white;
+    padding: 2px 10px;
+    margin-left: -5px;
 }
 
 /* Every post, on every page, gets this style on its <article> tag */
@@ -701,20 +701,47 @@ margin-left: -5px;
     padding: 2rem 0 0 0;
 }
 
-.post-footer .call-to-action {
+.post-footer .call-to-action,
+.post-footer .mailing-list {
     margin: 6rem 0 0 0;
     padding: 2rem;
     background-color: #EBF2F6;
     text-align: center;
 }
 
-.post-footer .call-to-action .button {
+.post-footer .mailing-list {
+    background-color: #ddf6d7;
+}
+
+.post-footer .call-to-action .button,
+.post-footer .mailing-list .button {
     display: inline-block;
     background-color: #3276b1;
     color: white;
     padding: 0.5rem 1rem;
     text-decoration: none;
     border-radius: 5px;
+}
+
+.post-footer .mailing-list .button {
+    background-color: #54b148;
+}
+
+.post-footer #mc_embed_signup {
+    margin-top: 20px;
+    font-size: 1.4rem;
+}
+
+.post-footer #mc_embed_signup input[type=email] {
+    width: 260px;
+    height: 32px;
+    padding: 0 10px;
+    border-radius: 5px;
+    border: 1px solid #eee;
+}
+
+.post-footer #mc_embed_signup input[type=submit] {
+    border: none;
 }
 
 /* list of author links - location / url */
@@ -1044,6 +1071,10 @@ margin-left: -5px;
         line-height: 1.5em;
     }
 
+    .site-head #mc_embed_signup {
+        font-size: 1.7rem;
+    }
+
     .post {
         font-size: 0.9em;
         line-height: 1.6em;
@@ -1055,6 +1086,10 @@ margin-left: -5px;
 
     .post-template .post-header {
         padding: 40px 0;
+    }
+
+    .post-footer #mc_embed_signup input[type=email] {
+        width: 200px;
     }
 
     h1 {
@@ -1114,6 +1149,9 @@ margin-left: -5px;
         font-size: 1.5rem;
     }
 
+    .site-head #mc_embed_signup {
+        font-size: 1.5rem;
+    }
 
     h1, h2 {
         font-size: 3rem;
