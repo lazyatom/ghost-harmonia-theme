@@ -21,6 +21,14 @@
         {{! Everything inside the #post tags pulls data from the post }}
         {{#post}}
 
+            <meta name="twitter:card" content="summary">
+            <meta name="twitter:site" content="@harmonia">
+            <meta name="twitter:title" content="{{title}}">
+            <meta name="twitter:description" content="{{excerpt}}">
+            <meta name="twitter:creator" content="@lazyatom">
+            <meta name="twitter:domain" content="harmonia.io">
+
+
             <span class="post-meta"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format='DD MMM YYYY'}}</time> {{tags prefix="on " separator=" | "}}</span>
 
             <h1 class="post-title">{{{title}}}</h1>
