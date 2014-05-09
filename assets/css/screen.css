@@ -680,20 +680,35 @@ margin on the iframe, cause it breaks stuff. */
     padding: 2rem 0 0 0;
 }
 
-.post-footer .call-to-action,
-.post-footer .mailing-list {
-    margin: 6rem 0 0 0;
+/* Call to action & mailing list */
+
+.call-to-action,
+.mailing-list {
+    margin: 2rem 0 4rem 0;
     padding: 2rem;
     background-color: #EBF2F6;
     text-align: center;
 }
 
+.post-footer .call-to-action,
 .post-footer .mailing-list {
-    background-color: #ddf6d7;
+    margin: 6rem 0 0 0;
 }
 
-.post-footer .call-to-action .button,
-.post-footer .mailing-list .button {
+.mailing-list {
+    border: 4px dashed #ddf6d7;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.post-footer .mailing-list {
+    background-color: #ddf6d7;
+    border: none;
+    border-radius: 0;
+}
+
+.call-to-action .button,
+.mailing-list .button {
     display: inline-block;
     background-color: #3276b1;
     color: white;
@@ -702,16 +717,26 @@ margin on the iframe, cause it breaks stuff. */
     border-radius: 5px;
 }
 
-.post-footer .mailing-list .button {
+.mailing-list .button {
     background-color: #54b148;
 }
 
-.post-footer #mc_embed_signup {
+.post-content .mailing-list {
+    font-size: 2.0rem;
+    line-height: 1.6em;
+}
+
+.post-content .mailing-list h4 {
+    font-size: 1.8rem;
+    margin: 0;
+}
+
+#mc_embed_signup {
     margin-top: 20px;
     font-size: 1.4rem;
 }
 
-.post-footer #mc_embed_signup input[type=email] {
+#mc_embed_signup input[type=email] {
     width: 260px;
     height: 32px;
     padding: 0 10px;
@@ -719,7 +744,11 @@ margin on the iframe, cause it breaks stuff. */
     border: 1px solid #eee;
 }
 
-.post-footer #mc_embed_signup input[type=submit] {
+.post-content #mc_embed_signup input[type=email] {
+    border: 1px solid #bbb;
+}
+
+#mc_embed_signup input[type=submit] {
     border: none;
 }
 
