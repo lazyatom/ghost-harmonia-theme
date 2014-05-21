@@ -5,110 +5,127 @@
 
 <main class="content" role="main">
 
-    <article class="{{post_class}}">
+    <aside class="post-sidebar">
+        <a class="blog-index" href="{{@blog.url}}">Back to article index</a>
 
-        {{! Each post has the blog logo at the top, with a link back to the home page }}
-        <header class="post-header">
-            <a class="blog-logo" href="{{@blog.url}}">
-                {{#if @blog.logo}}
-                    <img src="{{@blog.logo}}" alt="Blog Logo" />
-                {{else}}
-                    <span class="blog-title">{{@blog.title}}</span>
-                {{/if}}
-            </a>
-        </header>
+        <a class="blog-logo" href="/?utm_source=blog&amp;utm_medium=referral&amp;utm_content=blog+sidebar+logo&amp;utm_campaign=blog">
+            {{#if @blog.logo}}
+                <img src="{{@blog.logo}}" alt="Blog Logo" />
+            {{/if}}
+            <p class="blog-title">{{@blog.title}} <span class='subtitle'>Blog</span></p>
+        </a>
 
-        {{! Everything inside the #post tags pulls data from the post }}
-        {{#post}}
+        <section class="sidebar-call-to-action">
+            <p>Harmonia helps your team work better, together.</p>
+            <p><a href="/?utm_source=blog&amp;utm_medium=referral&amp;utm_content=blog+sidebar+find+out+more&amp;utm_campaign=blog" class="button">Find out more now</a></p>
+        </section>
+    </aside>
 
-            <meta name="twitter:card" content="summary">
-            <meta name="twitter:site" content="@harmonia">
-            <meta name="twitter:title" content="{{title}}">
-            <meta name="twitter:description" content="{{excerpt}}">
-            <meta name="twitter:creator" content="@lazyatom">
-            <meta name="twitter:domain" content="harmonia.io">
+    <section class="post-wrapper">
+        <article class="{{post_class}}">
+
+            {{! Each post has the blog logo at the top, with a link back to the home page }}
+            <header class="post-header">
+                <a class="blog-logo" href="{{@blog.url}}">
+                    {{#if @blog.logo}}
+                        <img src="{{@blog.logo}}" alt="Blog Logo" />
+                    {{else}}
+                        <span class="blog-title">{{@blog.title}}</span>
+                    {{/if}}
+                </a>
+            </header>
+
+            {{! Everything inside the #post tags pulls data from the post }}
+            {{#post}}
+
+                <meta name="twitter:card" content="summary">
+                <meta name="twitter:site" content="@harmonia">
+                <meta name="twitter:title" content="{{title}}">
+                <meta name="twitter:description" content="{{excerpt}}">
+                <meta name="twitter:creator" content="@lazyatom">
+                <meta name="twitter:domain" content="harmonia.io">
 
 
-            <span class="post-meta"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format='DD MMM YYYY'}}</time> {{tags prefix="on " separator=" | "}}</span>
+                <span class="post-meta"><time datetime="{{date format="YYYY-MM-DD"}}">{{date format='DD MMM YYYY'}}</time> {{tags prefix="on " separator=" | "}}</span>
 
-            <h1 class="post-title">{{{title}}}</h1>
+                <h1 class="post-title">{{{title}}}</h1>
 
-            <section class="post-content">
-                {{content}}
-            </section>
-
-            <footer class="post-footer">
-
-                <section class="author">
-                    <h4>{{author.name}}</h4>
-                    <p>{{author.bio}}</p>
-                    <ul class="author-meta clearfix">
-                        {{#if author.location}}<li>{{author.location}}</li>{{/if}}
-                        {{#if author.website}}<li><a href="{{author.website}}">{{author.website}}</a></li>{{/if}}
-                    </ul>
+                <section class="post-content">
+                    {{content}}
                 </section>
 
-                <section class="share">
-                    <h4>Share this post</h4>
-                    <a class="icon-twitter" href="https://twitter.com/share?text={{encode title}}&amp;url={{url absolute="true"}}"
-                        onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
-                        <span class="hidden">Twitter</span>
-                    </a>
-                    <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
-                        onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
-                        <span class="hidden">Facebook</span>
-                    </a>
-                    <a class="icon-google-plus" href="https://plus.google.com/share?url={{url absolute="true"}}"
-                       onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
-                        <span class="hidden">Google+</span>
-                    </a>
-                </section>
+                <footer class="post-footer">
 
-                <section class="mailing-list">
-                    <h4>Add your email to hear first about new posts and news</h4>
-                    <!-- Begin MailChimp Signup Form -->
-                    <div id="mc_embed_signup">
-                    <form action="http://harmonia.us3.list-manage2.com/subscribe/post?u=6bb4c7c29d4cee15704e2a1a1&amp;id=7112729437" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="">
-                        <input type="email" placeholder="you@your-email.com" value="" name="EMAIL" class="required email" id="mce-EMAIL">
-                            <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
-                        <input type="hidden" value="{{url absolute="true"}}" name="SOURCE" id="mce-SOURCE">
-                        <div id="mce-responses">
-                            <div class="response" id="mce-error-response" style="display:none"></div>
-                            <div class="response" id="mce-success-response" style="display:none"></div>
-                        </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
-                        <div style="position: absolute; left: -5000px;"><input type="text" name="b_6bb4c7c29d4cee15704e2a1a1_7112729437" value=""></div>
-                    </form>
-                    </div>
-                    <!--End mc_embed_signup-->
-                </section>
+                    <section class="author">
+                        <h4>{{author.name}}</h4>
+                        <p>{{author.bio}}</p>
+                        <ul class="author-meta clearfix">
+                            {{#if author.location}}<li>{{author.location}}</li>{{/if}}
+                            {{#if author.website}}<li><a href="{{author.website}}">{{author.website}}</a></li>{{/if}}
+                        </ul>
+                    </section>
 
-                <section class="call-to-action">
-                    <a class="logo" href="/?utm_source=blog&amp;utm_medium=referral&amp;utm_content=blog+footer+logo&amp;utm_campaign=blog">
-                        <img src="{{@blog.logo}}" /></a>
+                    <section class="share">
+                        <h4>Share this post</h4>
+                        <a class="icon-twitter" href="https://twitter.com/share?text={{encode title}}&amp;url={{url absolute="true"}}"
+                            onclick="window.open(this.href, 'twitter-share', 'width=550,height=235');return false;">
+                            <span class="hidden">Twitter</span>
+                        </a>
+                        <a class="icon-facebook" href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}"
+                            onclick="window.open(this.href, 'facebook-share','width=580,height=296');return false;">
+                            <span class="hidden">Facebook</span>
+                        </a>
+                        <a class="icon-google-plus" href="https://plus.google.com/share?url={{url absolute="true"}}"
+                           onclick="window.open(this.href, 'google-plus-share', 'width=490,height=530');return false;">
+                            <span class="hidden">Google+</span>
+                        </a>
+                    </section>
 
-                    <h4>Harmonia makes teams stronger by sharing responsibilities.</h4>
-                    <p><a href="/?utm_source=blog&amp;utm_medium=referral&amp;utm_content=blog+footer+find+out+more&amp;utm_campaign=blog" class="button">Find out more now</a></p>
-                </section>
+                    <section class="mailing-list">
+                        <h4>Add your email to hear first about new posts and news</h4>
+                        <!-- Begin MailChimp Signup Form -->
+                        <div id="mc_embed_signup">
+                        <form action="http://harmonia.us3.list-manage2.com/subscribe/post?u=6bb4c7c29d4cee15704e2a1a1&amp;id=7112729437" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate="">
+                            <input type="email" placeholder="you@your-email.com" value="" name="EMAIL" class="required email" id="mce-EMAIL">
+                                <input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button">
+                            <input type="hidden" value="{{url absolute="true"}}" name="SOURCE" id="mce-SOURCE">
+                            <div id="mce-responses">
+                                <div class="response" id="mce-error-response" style="display:none"></div>
+                                <div class="response" id="mce-success-response" style="display:none"></div>
+                            </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                            <div style="position: absolute; left: -5000px;"><input type="text" name="b_6bb4c7c29d4cee15704e2a1a1_7112729437" value=""></div>
+                        </form>
+                        </div>
+                        <!--End mc_embed_signup-->
+                    </section>
 
-                <section id="disqus_thread" class="comments">
-                </section>
-                <script type="text/javascript">
-                  var disqus_shortname = 'harmoniablog';
+                    <section class="call-to-action">
+                        <a class="logo" href="/?utm_source=blog&amp;utm_medium=referral&amp;utm_content=blog+footer+logo&amp;utm_campaign=blog">
+                            <img src="{{@blog.logo}}" /></a>
 
-                  /* * * DON'T EDIT BELOW THIS LINE * * */
-                  (function() {
-                      var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-                      dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
-                      (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-                  })();
-                </script>
-                <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-                <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+                        <h4>Harmonia makes teams stronger by sharing responsibilities.</h4>
+                        <p><a href="/?utm_source=blog&amp;utm_medium=referral&amp;utm_content=blog+footer+find+out+more&amp;utm_campaign=blog" class="button">Find out more now</a></p>
+                    </section>
 
-            </footer>
+                    <section id="disqus_thread" class="comments">
+                    </section>
+                    <script type="text/javascript">
+                      var disqus_shortname = 'harmoniablog';
 
-        {{/post}}
+                      /* * * DON'T EDIT BELOW THIS LINE * * */
+                      (function() {
+                          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                          dsq.src = 'http://' + disqus_shortname + '.disqus.com/embed.js';
+                          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                      })();
+                    </script>
+                    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                    <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 
-    </article>
+                </footer>
 
+            {{/post}}
+
+        </article>
+    </section>
 </main>

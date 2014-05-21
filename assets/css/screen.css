@@ -639,6 +639,98 @@ margin on the iframe, cause it breaks stuff. */
     padding: 2.5rem 0;
 }
 
+.post-template .post-sidebar {
+    display: none;
+}
+
+@media (min-width: 901px) {
+    .post-template .content {
+        height: 100%;
+    }
+
+    .post-template .post-header {
+        /*display: none;*/
+        margin-top: 0;
+        padding-top: 0;
+    }
+
+    .post-template .post-header .blog-logo {
+        display: none;
+    }
+
+    .post-template .post-sidebar {
+        display: block;
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 300px;
+        height: 100%;
+        z-index: 100;
+        background-color: #443b50;
+        padding-top: 111px;
+        text-align: center;
+        color: white;
+    }
+
+    .post-template .post-sidebar a.blog-index {
+        position: absolute;
+        top: 1rem;
+        font-size: 1.4rem;
+        display: block;
+        text-align: center;
+        width: 100%;
+        color: #8f7ca9;
+        text-decoration: none;
+    }
+
+    .post-template .post-sidebar a.blog-index:before {
+        content: "\02190  ";
+    }
+
+    .post-template .post-sidebar p {
+        font-size: 1.4rem;
+    }
+
+    .post-template .post-sidebar a {
+        color: white;
+    }
+
+    .post-template .post-sidebar .blog-title {
+        font-size: 3rem;
+        display: block;
+    }
+
+    .post-template .post-sidebar .sidebar-call-to-action {
+        padding: 0 15px;
+    }
+
+    .post-template .post-sidebar .sidebar-call-to-action p {
+        font-size: 1.8rem;
+        margin-bottom: 1em;
+        margin-top: 1em;
+    }
+
+    .post-template .post-sidebar .sidebar-call-to-action .button {
+        font-size: 1.6rem;
+    }
+
+
+    .post-template .site-footer {
+        display: none;
+    }
+
+    .post-template .post-wrapper {
+        position: absolute;
+        left: 300px;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        outline: 0;
+        background-color: #fff;
+        overflow: auto;
+    }
+}
+
 /* Keep images centred and within the bounds of the post-width */
 .post-content img {
     display: block;
@@ -707,6 +799,7 @@ margin on the iframe, cause it breaks stuff. */
     border-radius: 0;
 }
 
+.sidebar-call-to-action .button,
 .call-to-action .button,
 .mailing-list .button {
     display: inline-block;
@@ -717,8 +810,17 @@ margin on the iframe, cause it breaks stuff. */
     border-radius: 5px;
 }
 
+.sidebar-call-to-action .button:hover,
+.call-to-action .button:hover {
+    background-color: #3e95e1;
+}
+
 .mailing-list .button {
     background-color: #54b148;
+}
+
+.mailing-list .button:hover {
+    background-color: #5ccc52;
 }
 
 .post-content .mailing-list {
