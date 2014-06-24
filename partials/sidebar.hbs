@@ -1,0 +1,24 @@
+<div class="sidebar" role="aside" {{#if @blog.cover}}style="background-image: url({{@blog.cover}})"{{/if}}>
+		<header class="header">
+      <a class="blog-index" href="{{@blog.url}}">Back <span class="expanded">to article index</span></a>
+
+			{{#if @blog.logo}}
+			<a href="{{@blog.url}}">
+				<img id="blog" class="logo" src="{{@blog.logo}}">
+			</a>
+			{{/if}}
+			<h1 class="title"><a href="{{@blog.url}}">{{@blog.title}} <span class="subtitle">Blog</span></a></h1>
+
+			<div class="separator"></div>
+
+			<p class="description">{{@blog.description}}</p>
+
+      <p class="sidebar-call-to-action"><a href="/?utm_source=blog&amp;utm_medium=referral&amp;utm_content=blog+sidebar+find+out+more&amp;utm_campaign=blog" class="button">Find out more now</a></p>
+
+			<div class="social-icons">
+				<a href="https://twitter.com/harmonia" class="icon icon-twitter"></a>
+				<a href="https://plus.google.com/113331647141284409488?rel=author" class="icon icon-googleplus"></a>
+				<a href="{{@blog.url}}/rss/" class="icon-feed"></a>
+			</div>
+		</header>
+	</div>

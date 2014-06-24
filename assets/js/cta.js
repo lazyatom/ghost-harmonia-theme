@@ -9,7 +9,7 @@
       var new_mailing_list = mailing_list.clone();
       new_mailing_list.find("h4").text(text);
       cta.replaceWith(new_mailing_list);
-    })
+    });
   });
 
 }(jQuery));

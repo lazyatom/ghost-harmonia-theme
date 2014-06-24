@@ -1,0 +1,49 @@
+@media all and (max-width: 800px) {
+	.post-template a.blog-index {
+		left: 1rem;
+		width: auto;
+
+		.expanded {
+			display: none;
+		}
+	}
+
+	.sidebar {
+		position: relative;
+		width: 100%;
+		height: auto;
+
+		padding: 20px 20px 20px 20px;
+
+		text-align: center;
+		color: #fff;
+		font-size: 15px;
+
+		.description {
+			font-size: 1rem;
+		}
+
+		.sidebar-call-to-action {
+			font-size: 15px;
+			margin: 1rem 0;
+		}
+
+		.circle {
+			width: 100px;
+			height: 100px;
+		}
+
+		.logo {
+			margin-top: 0;
+			height: 50px;
+		}
+
+		.separator {
+			display: none;
+		}
+	}
+
+	.content {
+		margin-left: 0px;
+	}
+}

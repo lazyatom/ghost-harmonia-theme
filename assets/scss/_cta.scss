@@ -1,0 +1,102 @@
+/* Call to action & mailing list */
+
+.sidebar-call-to-action,
+.call-to-action,
+.mailing-list {
+  .button {
+    display: inline-block;
+    background-color: #3276b1;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
+}
+
+.call-to-action,
+.mailing-list {
+  margin: 2rem 0 0 0;
+  padding: 1rem;
+  background-color: #EBF2F6;
+  text-align: center;
+
+  h4 {
+    font-size: 1.4rem;
+    margin: 0.5rem 0;
+  }
+
+  p {
+    margin-top: 1rem;
+  }
+
+  input,
+  .button {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+  }
+
+  h4:first-child {
+    margin-top: 0;
+  }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.mailing-list {
+  background-color: #ddf6d7;
+  border: none;
+  border-radius: 0;
+
+  .button {
+    background-color: #54b148;
+
+    &:hover {
+      background-color: #5ccc52;
+    }
+  }
+}
+
+.post-content .mailing-list {
+  border: 4px dashed #ddf6d7;
+  border-radius: 10px;
+  background-color: white;
+  margin-top: 1.6rem;
+}
+
+.sidebar-call-to-action,
+.call-to-action {
+  .button:hover {
+    background-color: #3e95e1;
+  }
+}
+
+.sidebar-call-to-action {
+  a.button:hover {
+    color: white;
+  }
+}
+
+#mc_embed_signup {
+  margin-top: 20px;
+  font-size: 1.4rem;
+
+  input[type=email] {
+    width: 260px;
+    height: 40px;
+    padding: 0 10px;
+    border-radius: 5px;
+    border: 1px solid #eee;
+  }
+
+  input[type=submit] {
+    border: none;
+  }
+
+  input[type=email] {
+    border: 1px solid #bbb;
+  }
+}

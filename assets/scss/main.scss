@@ -1,0 +1,142 @@
+@import 'fonts';
+@import 'general';
+@import 'cta';
+
+// dimens
+$sidebarWidth: 300px;
+
+// colors
+$gray: #4a4a4a;
+$darkGray: #222;
+$linkHoverColor: #57A3E8;
+
+a {
+	color: $gray;
+	transition: color ease 0.1s;
+
+	&:hover {
+		color: $linkHoverColor;
+	}
+}
+
+.hidden {
+  text-indent: -9999px;
+  visibility: hidden;
+  display: none;
+}
+
+.sidebar {
+	position: fixed;
+	width: $sidebarWidth;
+	height: 100%;
+
+	padding: 60px 20px 20px 20px;
+
+	text-align: center;
+	color: #fff;
+	font-size: 15px;
+
+	background: #443b50 no-repeat center center;
+	background-size: cover;
+	background-position: 20%;
+	-webkit-transform: translateZ(0);
+
+	.title {
+		font-size: 30px;
+		color: white;
+		text-decoration: none;
+
+		.subtitle {
+			opacity: 0.5;
+		}
+	}
+
+	.description {
+		margin-bottom: 1rem;
+		font-size: 1.4rem;
+		margin-top: 1.2rem
+	}
+
+	.footer {
+		position: relative;
+		bottom: 0px;
+		font-size: 12px;
+	}
+
+	a {
+		color: white;
+		&:hover {
+			color: $linkHoverColor;
+		}
+	}
+
+	.logo {
+		display: block;
+		max-width: $sidebarWidth;
+		height: auto;
+		background-size: contain;
+		margin: 0 auto 20px auto;
+		background: no-repeat;
+	}
+
+	.circle {
+		display: block;
+		width: 130px;
+		height: 130px;
+		margin: 0 auto 20px auto;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center center;
+		-webkit-border-radius: 99em;
+		-moz-border-radius: 99em;
+		border-radius: 99em;
+		border: 5px solid #eee;
+		box-shadow: 0 3px 2px rgba(0, 0, 0, 0.3);
+	}
+
+	.social-icons {
+		margin-top: 10px;
+	}
+
+	.icon {
+		font-size: 18px;
+	}
+}
+
+.content {
+	margin-left: $sidebarWidth;
+	padding: 50px;
+	max-width: 800px;
+
+	@import 'posts';
+}
+
+.separator {
+	display: block;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+}
+
+a.blog-index {
+	display: none;
+}
+
+.post-template a.blog-index {
+	display: block;
+	opacity: 0.5;
+	position: absolute;
+	top: 1rem;
+	left: 0;
+	width: 100%;
+	text-decoration: none;
+
+	&:hover {
+		color: white;
+		opacity: 0.8;
+	}
+
+	&:before {
+    content: "\02190  ";
+	}
+}
+
+@import 'media';

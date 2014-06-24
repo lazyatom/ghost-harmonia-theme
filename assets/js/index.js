@@ -21,7 +21,7 @@
                     $(this).removeClass('full-img');
                 }
             });
-        };
+        }
 
         casperFullImg();
         $(window).smartresize(casperFullImg);
@@ -40,20 +40,23 @@
       return function debounced () {
           var obj = this, args = arguments;
           function delayed () {
-              if (!execAsap)
-                  func.apply(obj, args);
+              if (!execAsap) {
+                func.apply(obj, args);
+              }
               timeout = null;
-          };
+          }
 
-          if (timeout)
-              clearTimeout(timeout);
-          else if (execAsap)
-              func.apply(obj, args);
+          if (timeout) {
+            clearTimeout(timeout);
+          }
+          else if (execAsap) {
+            func.apply(obj, args);
+          }
 
           timeout = setTimeout(delayed, threshold || 100);
       };
-  }
-  // smartresize 
+  };
+  // smartresize
   jQuery.fn[sr] = function(fn){  return fn ? this.bind('resize', debounce(fn)) : this.trigger(sr); };
 
 })(jQuery,'smartresize');
