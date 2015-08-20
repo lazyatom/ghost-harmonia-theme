@@ -8,10 +8,11 @@ $sidebarWidth: 300px;
 // colors
 $gray: #4a4a4a;
 $darkGray: #222;
-$linkHoverColor: #57A3E8;
+$linkColor: #57A3E8;
+$linkHoverColor: lighten($linkColor, 10%);
 
 a {
-	color: $gray;
+	color: $linkColor;
 	transition: color ease 0.1s;
 
 	&:hover {
@@ -74,7 +75,7 @@ a {
 		display: block;
 		max-width: $sidebarWidth;
 		height: auto;
-		background-size: contain;
+		// background-size: contain;
 		margin: 0 auto 20px auto;
 		background: no-repeat;
 	}
@@ -140,3 +141,4 @@ a.blog-index {
 }
 
 @import 'media';
+@import 'normalize';
